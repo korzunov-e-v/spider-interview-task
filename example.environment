@@ -4,3 +4,6 @@ POSTGRES_USER=dbuser
 POSTGRES_PASSWORD=dbpassword
 POSTGRES_HOST=dbhost
 POSTGRES_PORT=5432
+
+# django
+SECRET_KEY=supersecret
