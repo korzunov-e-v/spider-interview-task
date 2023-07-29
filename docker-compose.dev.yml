@@ -1,0 +1,32 @@
+version: '3.6'
+
+services:
+  django:
+    container_name: django-app
+    environment:
+      - DJANGO_SETTINGS_MODULE=market_app.settings
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    env_file:
+      - .environment
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/code
+      - ./storage/root:/root
+
+  postgres:
+    image: postgres:bullseye
+    container_name: spider-postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./storage/postgres:/var/lib/postgresql/data
+    env_file: .environment
+
+
+networks:
+  default:
+    name: core
