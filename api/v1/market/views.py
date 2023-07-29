@@ -1,8 +1,8 @@
+from django_filters import rest_framework as filters
 from rest_framework.viewsets import ModelViewSet
 
 from api.v1.market.serializers import CategorySerializer, ProductSerializer
 from apps.market.models import Category, Product
-from django_filters import rest_framework as filters
 
 
 class CategoryViewSet(ModelViewSet):

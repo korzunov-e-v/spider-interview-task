@@ -1,8 +1,8 @@
+from django_filters import rest_framework as filters
 from rest_framework.viewsets import ModelViewSet
 
-from api.v1.organizations.serializers import OrganizationSerializer, ConcernSerializer, DistrictSerializer
-from apps.organizations.models import Concern, Organization, District
-from django_filters import rest_framework as filters
+from api.v1.organizations.serializers import ConcernSerializer, DistrictSerializer, OrganizationSerializer
+from apps.organizations.models import Concern, District, Organization
 
 
 class OrganizationViewSet(ModelViewSet):

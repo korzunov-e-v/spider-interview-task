@@ -1,6 +1,6 @@
 from rest_framework.routers import SimpleRouter
 
-from api.v1.organizations.views import OrganizationViewSet, DistrictViewSet, ConcernViewSet
+from api.v1.organizations.views import ConcernViewSet, DistrictViewSet, OrganizationViewSet
 
 
 router = SimpleRouter()

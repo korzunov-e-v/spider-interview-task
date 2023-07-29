@@ -11,15 +11,5 @@ class Concern(models.Model):
 
 class Organization(models.Model):
     name = models.CharField('Название предприятия', max_length=150)
-    concern = models.ForeignKey(
-        Concern,
-        on_delete=models.PROTECT,
-        related_name='organizations'
-    )
-    district = models.ManyToManyField(
-        District,
-        related_name='organizations'
-    )
-
-
-
+    concern = models.ForeignKey(Concern, on_delete=models.PROTECT, related_name='organizations')
+    district = models.ManyToManyField(District, related_name='organizations')
