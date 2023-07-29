@@ -55,4 +55,4 @@ pre-commit: set-container
 	docker compose -f docker-compose.dev.yml exec $(c) /bin/sh -c 'pre-commit run --all-files'
 execute-pytest-command: set-container
 	docker compose -f docker-compose.dev.yml exec $(c) /bin/sh -c $(START_PYTEST)
-pytest: set-container set-testing-settings execute-pytest-command set-prod-settings
+test: set-container set-prod-settings execute-pytest-command
